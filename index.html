@@ -2,8 +2,12 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>SpaceRent Web</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>SpaceRent | Professional Property Management</title>
+    <link rel="manifest" href="/manifest.json" />
+    <meta name="theme-color" content="#020617" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
       /* Custom scrollbar for dark theme */
@@ -28,28 +32,31 @@
       body {
         font-family: 'Inter', sans-serif;
         background-color: #020617; /* Slate 950 */
+        overscroll-behavior-y: contain;
       }
     </style>
   <script type="importmap">
 {
   "imports": {
-    "@google/genai": "https://esm.sh/@google/genai@^1.41.0",
+    "vite": "https://esm.sh/vite@^7.3.1",
+    "@vitejs/plugin-react": "https://esm.sh/@vitejs/plugin-react@^5.1.4",
     "react-dom/": "https://esm.sh/react-dom@^19.2.4/",
-    "lucide-react": "https://esm.sh/lucide-react@^0.564.0",
     "react/": "https://esm.sh/react@^19.2.4/",
     "react": "https://esm.sh/react@^19.2.4",
+    "@google/genai": "https://esm.sh/@google/genai@^1.41.0",
+    "lucide-react": "https://esm.sh/lucide-react@^0.564.0",
     "recharts": "https://esm.sh/recharts@^3.7.0",
-    "jspdf-autotable": "https://esm.sh/jspdf-autotable@^5.0.7",
     "react-router-dom": "https://esm.sh/react-router-dom@^7.13.0",
-    "jspdf": "https://esm.sh/jspdf@^4.1.0",
-    "dexie": "https://esm.sh/dexie@^4.3.0"
+    "dexie": "https://esm.sh/dexie@^4.3.0",
+    "jspdf-autotable": "https://esm.sh/jspdf-autotable@^5.0.7",
+    "jspdf": "https://esm.sh/jspdf@^4.1.0"
   }
 }
 </script>
-<link rel="stylesheet" href="/index.css">
 </head>
   <body>
     <div id="root"></div>
-  <script type="module" src="/index.tsx"></script>
-</body>
+    <!-- Use relative path for Vite entry point -->
+    <script type="module" src="./index.tsx"></script>
+  </body>
 </html>
