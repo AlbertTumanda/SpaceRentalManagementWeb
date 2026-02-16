@@ -1,18 +1,17 @@
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 
-// https://vitejs.dev/config/
 export default defineConfig({
   plugins: [react()],
   define: {
-    // This ensures process.env.API_KEY is replaced during build
     'process.env.API_KEY': JSON.stringify(process.env.API_KEY)
   },
   build: {
     outDir: 'dist',
     assetsDir: 'assets',
     sourcemap: false,
-    minify: 'terser',
+    // Use default esbuild minifier instead of terser to avoid "terser not found" error
+    minify: 'esbuild',
     rollupOptions: {
       output: {
         manualChunks: {
